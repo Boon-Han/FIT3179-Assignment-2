@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+        <title>Australia Bushfires</title>
+
+    </head>
+    <body>
+
+        <h1> Australia Bushfires (2023)</h1>
+
+        <div class="container">
+            <section class="left-column">
+                <p>
+                    In 2023, Australia experienced significant bushfires as the fire season was driven by unsually hot and dry conditions, especially in the northen regions like Northen Teritory, Queensland and the north side of Western Australia. 
+                    According to Nasa's <span>Fire Information for Resource Management System (FIRMS)</span>, there have been <span class="extreme">approximately 30,000 confirmed bushfires</span> tracked.
+                </p>
+
+                <p>
+                    In Queensland, bushfires destroyed <span class="extreme">at least 16 houses </span>and <span class="extreme">over a 11,000 hectares of land</span> were burned. 
+                    In New South Wales, large fires burned <span class="extreme"> over 33,000 hectares of land</span> in places Willi Willi National Park with multiple properties destroyed and <span class="extreme">one person killed</span>.
+                </p>
+
+                <div id="vis" class="vega-vis-font">
+                </div>
+                <br>
+                <br>
+                <h2>What causes Bushfires</h2>
+                <p>Bushfires can be caused by many factors but the most common ones are:
+                    <ul class="general-font">
+                        <li>High temperatures</li>
+                        <li>Low humidity</li>
+                        <li>Lack of recent rain</li>
+                        <li>Abundance of dry vegetation</li>
+                        <li>Strong winds</li>
+                        <li>Thunderstorms</li>
+                    </ul>
+                    <p>There are two types of fire ignition sources which includes: </p>
+                    <ul class="general-font">
+                        <li><span class="bold">Natural sources</span> such as lightning strikes.</li>
+                        <li><span class="bold">Human sources</span> either accidently or deliberately, eg. discarded cigarettes, electrical faults, arson, etc.</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section class="right-column">
+                <h2>Fire Radiative Power</h2>
+                <p>
+                    Fire Radiative Power, or FRP for short, can be defined as the rate at which an actively burning fire emits radiative energy.
+                    FRP quantifies the amount of thermal radiation emitted by the fire, which can indicate how intense or active the fire is. 
+                </p>
+                <p>
+                    In 2023, the highest recorded FRP is on October 6 with a <span class="extreme">FRP of 834.60 Watts</span> indicating a highly intense fire that is rapidly growing and difficult to control.
+                </p>
+                <div id="vis2">
+                </div>
+
+                <h2>Bushfires in 2023</h2>
+                <div id="vis3" class="vega-vis-font">
+                </div>
+                <p>
+                    Some parts of Australia are prone to bushfires all year round. But there are also bushfire seasons in Australia.
+                    In <span class="bold">Northen Australia</span>, the bushfire season peaks in winter and spring which are the dryer seasons in Australia.
+                    In <span class="bold">Southern Australia</span>, bushfire season peaks in summer and autumn.
+                </p>
+
+            </section>
+            
+        </div>
+
+        <script type="text/javascript">
+
+            var vis = "js/symbol_map.vg.json";
+            vegaEmbed('#vis', vis).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis2 = "js/area_chart.vg.json";
+            vegaEmbed('#vis2', vis2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis3 = "js/pie_bar_chart.vg.json";
+            vegaEmbed('#vis3', vis3).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+
+        </script>
+
+    </body>
+</html>
